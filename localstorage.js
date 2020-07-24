@@ -216,6 +216,8 @@ yearsUnitlRetirement(1948, 'Mark');
 yearsUnitlRetirement(1969, 'Jane');
 
 
+
+
 // Functions statement and expresstion
 
 /* function decleration
@@ -240,3 +242,96 @@ console.log(whatDoYouDo('teacher', 'John'));
 console.log(whatDoYouDo('designer', 'Jane'));
 console.log(whatDoYouDo('driver', 'Mary'));
 console.log(whatDoYouDo('web developer', 'Yinka'));
+
+// Array
+
+var Data = ['John', 'Smith'];
+
+ Data.push(' is a Man.'); //it push to the end of the array
+ Data.unshift('Mr.'); //it add valuse to the beginning of the array
+
+ Data.pop(); //remove the last element 
+ Data.shift(); //revome the first element
+console.log(Data);
+
+console.log(Data.indexOf('Smith'));
+
+
+function calculateBill(amount){
+    return amount;
+}
+
+var billOne = calculateBill(124);
+var billTwo = calculateBill(48);
+var billThree = calculateBill(268);
+
+console.log(billOne,billTwo,billThree);
+
+var tips = [];
+
+function tipCalculator(amount) {
+    // var tips = calculateBill(amount);
+    var payee;
+
+    if (tips < 50) {
+        payee = .2;
+    } else if ( tips >= 50 && tips < 200 ) {
+        payee = .15;
+    } else if (tips < 200) {
+        payee = .1;
+    }
+    return payee * amount;
+}
+
+var amount = [124, 48, 268];
+var tips = [tipCalculator(amount[0]),tipCalculator(amount[1]),tipCalculator(amount[2])];
+
+var result = [amount[0] + tips[0], amount[1] + tips[1], amount[2] + tips[2]];
+
+console.log(tips, result);
+
+// object using the object literials {}
+
+var John = {
+    firstName: 'John',
+    lastName: 'smith',
+    birthYear: 1990,
+    family: ['Janee', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+
+console.log(John.lastName);
+console.log(John['lastName']);
+var x = 'birthYear';
+console.log(John[x]);
+
+John.job = 'designer';
+John['isMarried'] = true;
+console.log(John);
+
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+// methods are functions attached to other array
+
+
+var John = {
+    firstName: 'John',
+    lastName: 'smith',
+    birthYear: 1990,
+    family: ['Janee', 'Mark', 'Bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function(){
+        this.age = 2018 - this.birthYear;
+        // return 2018 - this.birthYear;
+    }
+};
+
+John.calcAge();
+console.log(John);
